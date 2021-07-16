@@ -1,4 +1,4 @@
-fs = require("fs");
+const { crearArchivo } = require("./crearArchivo");
 
 let resultado = "";
 
@@ -7,7 +7,6 @@ for (j = 1; j < 11; j++) {
   resultado += `${i} x ${j} = ${i * j}\n `;
 }
 
-fs.writeFile("tabla-5.txt", resultado, function (err) {
-  if (err) return console.log(err);
-  console.log("archivo creado");
-});
+crearArchivo(resultado)
+  .then((msj) => console.log(msj))
+  .catch((msj) => console.log(msj));
