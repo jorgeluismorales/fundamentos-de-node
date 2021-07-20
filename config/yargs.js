@@ -11,7 +11,13 @@ const argv = require("yargs")
     else if (!(base >= 1 && base <= 20))
       throw Error("Debes colocar un valor de base entre 1 y 20");
     else return true;
-  }).argv;
+  })
+  .command(
+    "base",
+    "Base usada para generar la tabla de multiplicar correspondiente",
+    options
+  )
+  .help().argv;
 
 module.exports = {
   argv,
