@@ -1,11 +1,9 @@
 const { crearArchivo } = require("./crearArchivo");
+const argv = require("yargs").argv;
 
-console.log(process.argv);
+console.log(argv);
 
-const [, , param] = process.argv;
-const [, base = 5] = param.split("=");
-
-console.log(base);
+const base = argv.base;
 
 let resultado = "";
 
