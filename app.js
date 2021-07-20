@@ -1,12 +1,18 @@
 const { crearArchivo } = require("./crearArchivo");
 
+console.log(process.argv);
+
+const [, , param] = process.argv;
+const [, base = 5] = param.split("=");
+
+console.log(base);
+
 let resultado = "";
 
-const i = 5;
 for (j = 1; j < 11; j++) {
-  resultado += `${i} x ${j} = ${i * j}\n `;
+  resultado += `${base} x ${j} = ${base * j}\n `;
 }
 
-crearArchivo(resultado)
+crearArchivo(resultado, base)
   .then((msj) => console.log(msj))
   .catch((msj) => console.log(msj));
