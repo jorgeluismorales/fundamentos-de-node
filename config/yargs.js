@@ -5,6 +5,12 @@ const argv = require("yargs")
     type: "number",
     demandOption: true,
   })
+  .option('l', {
+    alias: 'listar',
+    type: 'boolean',
+    demandOption: true,
+    default: false
+  })
   .check((argv, options) => {
     let base = argv.base;
     if (isNaN(base)) throw Error("La base tiene que ser un numero");
